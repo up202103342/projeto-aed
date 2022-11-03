@@ -3,9 +3,11 @@
 
 #include <vector>
 #include <iostream>
-#include "Class.h"
+
 
 using namespace std;
+
+class turma;
 
 class Student {
 public:

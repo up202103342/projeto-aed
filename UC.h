@@ -3,9 +3,10 @@
 
 #include <vector>
 #include <iostream>
-#include "Class.h"
 
 using namespace std;
+
+class Turma;
 
 class UC {
 public:

@@ -3,7 +3,6 @@
 //
 #include "Student.h"
 #include "Class.h"
-#include "Class.cpp"
 
 Student::Student() {}
 

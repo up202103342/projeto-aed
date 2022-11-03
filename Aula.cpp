@@ -3,9 +3,7 @@
 //
 #include "Aula.h"
 #include "UC.h"
-#include "UC.cpp"
 #include "Class.h"
-#include "Class.cpp"
 
 Aula::Aula() {}
 

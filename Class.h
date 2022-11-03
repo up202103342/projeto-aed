@@ -3,11 +3,12 @@
 
 #include <vector>
 #include <iostream>
-#include "Student.h"
-#include "Aula.h"
-#include "UC.h"
 
 using namespace std;
+
+class Student;
+class Aula;
+class UC;
 
 class Turma {
 public:
