@@ -10,23 +10,23 @@ Student::Student() {}
 
 //Constructor -------------------
 Student::Student(int code, string name) {
-    this.code = code;
-    this.name = name;
+    this->code = code;
+    this->name = name;
 }
 
 //Getters --------------------
 vector<Turma> Student::getClasses() {
-    return this.classes;
+    return this->classes;
 }
 
 int Student::getCode() {
-    return this.code;
+    return this->code;
 }
 
 string Student::getName() {
-    return this.name;
+    return this->name;
 }
 
 void Student::addClass(Turma t) {
-    this.classes.push_back(t);
+    this->classes.push_back(t);
 }

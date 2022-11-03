@@ -11,17 +11,17 @@ UC::UC() {}
 
 //Constructor ---------------------------
 UC::UC(std::string code) {
-    this.code = code;                                  //Pode ser um erro de referência
+    this->code = code;                                  //Pode ser um erro de referência
 }                                                       //de vetores
 //Getters -------------------------------
 vector<Turma> UC::getClasses() {
-    return this.classes;
+    return this->classes;
 }
 
 string UC::getCode() {
-    return this.code;
+    return this->code;
 }
 
 void UC::addClass(Turma t) {
-    this.classes.push_back(t);
+    this->classes.push_back(t);
 }
