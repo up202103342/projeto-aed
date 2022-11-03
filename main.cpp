@@ -22,7 +22,7 @@ void readClasses(vector<UC> UCs) {
         istringstream iss(line);
         string turma, cadeira, dia, tipo;
         float hora, duracao;
-        line >> turma >> cadeira >> dia >> hora >> duracao >> tipo;
+        iss >> turma >> cadeira >> dia >> hora >> duracao >> tipo;
         int turmaN;
         std::istringstream(turma.substr(turma.length()-2,2)) >> turmaN;
         for (UC uc : UCs) {
@@ -54,7 +54,7 @@ void readClassesPerUC(vector<UC> UCs) {
     while (getline(infile, line, ',')) {
         istringstream iss(line);
         string uccode, classcode;
-        line >> uccode >> classcode;
+        iss >> uccode >> classcode;
         bool uc_exists = false;
         for (UC uc : UCs) {
             if (uc.getCode() == uccode) {
@@ -80,7 +80,7 @@ void readStudentsClasses(vector<UC> UCs, vector<Student> students) {
         istringstream iss(line);
         string nome, cadeira, turma;
         int codigo;
-        line >> codigo >> nome >> cadeira >> turma;
+        iss >> codigo >> nome >> cadeira >> turma;
         int turmaN;
         std::istringstream(turma.substr(turma.length()-2,2)) >> turmaN;
         int mins = 0;
