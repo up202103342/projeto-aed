@@ -8,6 +8,9 @@
 #include "Aula.cpp"
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <sstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -25,7 +28,7 @@ void readClasses(vector<UC> UCs) {
         for (UC uc : UCs) {
             if (uc.getCode() == cadeira) {
                 int len = uc.getClasses().size();
-                Turma cl = uc.getClasses()[len/2]
+                Turma cl = uc.getClasses()[len/2];
                 int min = 0; int max = len;
                 while (cl.getN() != turmaN) {
                     if (cl.getN() > turmaN) {
@@ -36,8 +39,8 @@ void readClasses(vector<UC> UCs) {
                     }
                     cl = uc.getClasses()[(max + min)/2];
                 }
-                Aula aula = new Aula(uc, dia, hora, duracao, tipo, cl);
-                cl.addAula(aula);
+                Aula *aula = new Aula(uc, dia, hora, duracao, tipo, cl);
+                cl.addAula(aula*);
                 break;
             }
         }
@@ -52,16 +55,20 @@ void readClassesPerUC(vector<UC> UCs) {
         istringstream iss(line);
         string uccode, classcode;
         line >> uccode >> classcode;
+        bool uc_exists = false;
         for (UC uc : UCs) {
             if (uc.getCode() == uccode) {
-                Turma cl = new Turma(classcode, uc);
-                uc.addClass(cl)
+                Turma *cl = new Turma(classcode, uc*);
+                uc.addClass(cl*)
+                uc_exists = true;
                 break;
             }
-            UC uc = new UC(uccode);
-            Turma cl = new Turma(classcode, uc);
-            uc.addClass(cl);
-            UCs.push_back(u);
+        }
+        if (!(uc_exists)) {
+            UC *u = new UC(uccode);
+            Turma *cl = new Turma(classcode, u);
+            u->addClass(cl*);
+            UCs.push_back(u*);
         }
     }
 }
@@ -92,7 +99,7 @@ void readStudentsClasses(vector<UC> UCs, vector<Student> students) {
                 mins = (mins + maxs)/2;
             }
         }
-        if (!(student_exists)) { Student s = new Student(codigo, nome); students.push_back(s); sort(students.begin(), students.end()); }
+        if (!(student_exists)) { Student *s = new Student(codigo, nome); students.push_back(s*); sort(students.begin(), students.end()); }
         for(UC uc : UCs) {
             if (uc.getCode() == cadeira){
                 int len = uc.getClasses().size();
@@ -127,10 +134,10 @@ int main() {
     readStudentsClasses(UCs, students);
     
     for (UC uc : UCs) {
-        for (Class c : uc.getClasses()) {
+        for (Turma c : uc.getClasses()) {
             cout << c.getCode();
         }
     }
 
-    return;
+    return 1;
 }

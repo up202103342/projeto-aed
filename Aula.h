@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <iostream>
+#include "Class.h"
+#include "UC.h"
 
 using namespace std;
 

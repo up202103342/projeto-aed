@@ -10,7 +10,6 @@ class Turma;
 
 class UC {
 public:
-    UC();
     UC(string code);
     vector<Turma> getClasses();
     string getCode();

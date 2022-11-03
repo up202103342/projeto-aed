@@ -7,16 +7,18 @@
 
 using namespace std;
 
-class turma;
+class Turma;
 
 class Student {
 public:
-    Student();
-    Student(vector<Turma> classes, int code, string name);      //erro "Use of undeclared identifier 'Turma'"
+    Student(int code, string name);
+
     vector<Turma> getClasses();                                 //erro "Use of undeclared identifier 'Turma'"
-    int getCode();
+    int getCode() const;
     string getName();
     void addClass(Turma t);
+    bool operator< (const Student & a);
+
 
 private:
     vector<Turma> classes;                                      //erro "Use of undeclared identifier 'Turma'"

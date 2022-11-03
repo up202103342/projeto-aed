@@ -12,7 +12,7 @@ Turma::Turma() {}
 //----------------------------------------------------------------------------------------------
 
 //Constructor ---------------
-Turma::Turma(std::string code, UC uc) {
+Turma::Turma(std::string code, UC *uc) {
     this->code = code;
     this->uc = uc;
 }

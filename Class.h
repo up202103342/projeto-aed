@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include "UC.h"
 
 using namespace std;
 
@@ -13,7 +14,7 @@ class UC;
 class Turma {
 public:
     Turma();
-    Turma(string code, UC uc);
+    Turma(string code, UC *uc);
     vector<Student> getStudents();
     string getCode();
     vector<Aula> getAulas();
